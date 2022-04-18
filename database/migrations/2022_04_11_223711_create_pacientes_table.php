@@ -20,7 +20,7 @@ class CreatePacientesTable extends Migration
             $table->integer('edad'); 
             $table->enum('sexo', ['M', 'F', 'O']); //M= Masculino F= Femenino O = Otros
             $table->string('cedula', 12)->unique();
-            $table->string('tipo_sangre', 4)->nullable();
+            $table->string('tipo_sangre', 4);
             $table->string('telefono', 12)->nullable();
             $table->string('correo', 60)->nullable();
             $table->string('direccion')->nullable();

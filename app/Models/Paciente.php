@@ -4,10 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Paciente extends Model
 {
     use HasFactory;
+    use SoftDeletes;
+    
+    protected $dates = ['deleted_at'];
 
     protected $fillable = [
         'nombres',
@@ -19,5 +23,11 @@ class Paciente extends Model
         'telefono',
         'correo',
         'direccion'
+    ];
+
+    protected $hidden = [
+        'deleted_at',
+        'updated_at',
+        'created_at'
     ];
 }
